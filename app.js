@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3000;
 const portmanat = require('./classes/api.class');
 
 app.use(express.json());
+app.set('view engine', 'html');
 app.set('views', './views');
 
 app.get('/', (req, res) => {
