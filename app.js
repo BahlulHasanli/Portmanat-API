@@ -29,9 +29,11 @@ app.post('/result', (req, res) => {
       req.body.hash
     );
 
-    res.send(check.result()).status(201);
+    check.result();
+
+    res.sendStatus(200);
   } catch (err) {
-    res.status(400).send();
+    res.sendStatus(404);
   }
 });
 
