@@ -5,9 +5,10 @@ const PORT = process.env.PORT || 3000;
 const portmanat = require('./classes/api.class');
 
 app.use(express.json());
+app.set('views', './views');
 
 app.get('/', (req, res) => {
-  res.send('API Home Page');
+  res.render('index');
 });
 
 app.post('/', (req, res) => {
