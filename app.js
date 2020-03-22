@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
-app.post('/', (req, res) => {
+app.post('/result', (req, res) => {
   const check = new portmanat(
     14087,
     req.body.o_id,
@@ -29,5 +29,9 @@ app.post('/', (req, res) => {
   );
 
   res.send('API' + ' ' + check.result());
+});
+
+app.get('/result', (req, res) => {
+  res.send('result api');
 });
 app.listen(PORT, () => console.log('Server run up!'));
