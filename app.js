@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/result', async (req, res) => {
-  const check = new portmanat(
+  const portmanatData = new portmanat(
     14087,
     req.body.s_id,
     'b@belshow9596',
@@ -30,9 +30,9 @@ app.post('/result', async (req, res) => {
   );
 
   try {
-    const response = check.result();
+    const CheckoutData = portmanatData.result();
 
-    res.json(response);
+    res.json(CheckoutData);
 
     // res.sendStatus(200);
   } catch (err) {
