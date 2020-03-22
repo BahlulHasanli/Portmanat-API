@@ -31,8 +31,6 @@ app.post('/result', async (req, res) => {
 
   try {
     check.result();
-    res.json(req.body);
-
     res.sendStatus(200);
   } catch (err) {
     res.sendStatus(404);
