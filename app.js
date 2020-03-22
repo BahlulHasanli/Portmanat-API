@@ -28,7 +28,9 @@ app.post('/result', (req, res) => {
     req.body.hash
   );
 
-  res.send(check.result());
+  check.result();
+
+  res.status(statusCode >= 100 && statusCode < 600 ? err.code : 500);
 });
 
 app.get('/result', (req, res) => {
