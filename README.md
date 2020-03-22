@@ -1,5 +1,5 @@
 ## Portmanat API (NodeJS)
-NodeJS üçün yazılan portmanat api.
+NodeJS proyektləri üçün hazırlanmış portmanat api.
 
 Quraşdırılma qaydası:
 ```
