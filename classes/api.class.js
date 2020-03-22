@@ -7,7 +7,8 @@ class Checkout {
     this.key = key;
     this.o_id = o_id;
     this.tr_id = tr_id;
-    this.method = amount;
+    this.method = method;
+    this.amount = amount;
     this.test = test;
     this.hash = hash;
   }
@@ -26,16 +27,6 @@ class Checkout {
     } else {
       return 0;
     }
-
-    // if (hash !== this.hash) {
-    //   return 0;
-    // }
-
-    // if (this.test == '0') {
-    //   return 'Hesab artirildi!';
-    // }
-
-    // return 1;
   }
 }
 
