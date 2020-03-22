@@ -25,7 +25,7 @@ app.post('/result', async (req, res) => {
     req.body.transaction,
     req.body.method,
     req.body.amount,
-    0,
+    req.body.test,
     req.body.hash
   );
 
