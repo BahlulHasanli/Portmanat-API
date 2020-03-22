@@ -4,18 +4,23 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Call Portmanat API class
 const portmanat = require('./classes/api.class');
 
+// Template Engine EJS
 app.set('view engine', 'ejs');
 app.set('views', './templates');
 
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/', (req, res) => {
+// Main route
+app.get('/', res => {
   res.render('index');
 });
 
+// Result Route
 app.post('/result', async (req, res) => {
   const portmanatData = new portmanat(
     14087,
@@ -33,15 +38,9 @@ app.post('/result', async (req, res) => {
     const CheckoutData = portmanatData.result();
 
     res.json(CheckoutData);
-
-    // res.sendStatus(200);
   } catch (err) {
-    res.sendStatus(404);
+    res.json(err);
   }
 });
 
-app.get('/result', (req, res) => {
-  check.result();
-  res.send('result api');
-});
 app.listen(PORT, () => console.log('Server run up!'));
