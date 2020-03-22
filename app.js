@@ -28,7 +28,9 @@ app.post('/result', (req, res) => {
     req.body.hash
   );
 
-  res.send('API' + ' ' + check.result());
+  check.result();
+
+  res.statusCode(201);
 });
 
 app.get('/result', (req, res) => {
