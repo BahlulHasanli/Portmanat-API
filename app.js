@@ -7,7 +7,7 @@ const portmanat = require('./classes/api.class');
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('API Home Pages');
+  res.send('API Home Page');
 });
 
 app.post('/', (req, res) => {
