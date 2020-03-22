@@ -23,14 +23,15 @@ app.post('/result', (req, res) => {
       req.body.s_id,
       'b@belshow9596',
       req.body.o_id,
-      req.body.transaction,
+      res.body.transaction,
       req.body.method,
       req.body.amount,
-      req.body.test,
-      req.body.hash
+      res.body.test,
+      res.body.hash
     );
 
     check.result();
+    // res.json(req.body);
 
     res.sendStatus(200);
   } catch (err) {
