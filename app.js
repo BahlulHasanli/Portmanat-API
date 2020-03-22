@@ -16,21 +16,25 @@ app.get('/', (req, res) => {
 });
 
 app.post('/result', (req, res) => {
-  const check = new portmanat(
-    14087,
-    req.body.s_id,
-    'b@belshow9596',
-    req.body.o_id,
-    req.body.transaction,
-    req.body.method,
-    req.body.amount,
-    req.body.test,
-    req.body.hash
-  );
+  try {
+    const check = new portmanat(
+      14087,
+      req.body.s_id,
+      'b@belshow9596',
+      req.body.o_id,
+      req.body.transaction,
+      req.body.method,
+      req.body.amount,
+      req.body.test,
+      req.body.hash
+    );
 
-  check.result();
+    check.result();
 
-  res.status(statusCode >= 100 && statusCode < 600 ? err.code : 500);
+    res.send().status(201);
+  } catch (err) {
+    res.send({ error: err }).status(400);
+  }
 });
 
 app.get('/result', (req, res) => {
