@@ -3,7 +3,7 @@ NodeJS proyektləri üçün hazırlanmış [Portmanat.az](https://portmanat.az/)
 
 Quraşdırılma qaydası:
 ```
-npm install
+npm install və ya yarn install
 ```
 
 
