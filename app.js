@@ -31,15 +31,15 @@ app.post('/result', async (req, res) => {
 
   try {
     check.result();
-    res.json(req.body);
 
-    // res.sendStatus(200);
+    res.sendStatus(200).json(req.body);
   } catch (err) {
     res.sendStatus(404);
   }
 });
 
 app.get('/result', (req, res) => {
+  check.result();
   res.send('result api');
 });
 app.listen(PORT, () => console.log('Server run up!'));

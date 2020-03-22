@@ -20,7 +20,7 @@ class Checkout {
 
     if (hash == this.hash) {
       if (this.test == '0') {
-        console.log('success');
+        return true;
       }
 
       return 1;
