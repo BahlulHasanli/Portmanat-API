@@ -30,9 +30,11 @@ app.post('/result', async (req, res) => {
   );
 
   try {
-    check.result();
+    const response = check.result();
 
-    res.sendStatus(200).json(req.body);
+    res.json(response);
+
+    // res.sendStatus(200);
   } catch (err) {
     res.sendStatus(404);
   }
