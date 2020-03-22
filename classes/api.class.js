@@ -16,10 +16,10 @@ class Checkout {
   result() {
     const hash = md5(
       this.p_id + this.s_id + this.o_id + this.tr_id + this.key
-    ).toLocaleUpperCase();
+    ).toUpperCase();
 
     if (hash == this.hash) {
-      if (this.tr_id == '0') {
+      if (this.test == '0') {
         console.log('success');
       }
 
