@@ -29,8 +29,6 @@ app.post('/result', (req, res) => {
   );
 
   check.result();
-
-  res.statusCode(201);
 });
 
 app.get('/result', (req, res) => {
