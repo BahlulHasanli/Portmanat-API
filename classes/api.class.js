@@ -1,16 +1,19 @@
+'use strict';
+
+// MD5 package
 const md5 = require('md5');
 
 class Checkout {
   constructor(p_id, s_id, key, o_id, tr_id, method, amount, test, hash) {
-    this.p_id = p_id;
-    this.s_id = s_id;
-    this.key = key;
-    this.o_id = o_id;
-    this.tr_id = tr_id;
-    this.method = method;
-    this.amount = amount;
-    this.test = test;
-    this.hash = hash;
+    this.p_id = p_id; // Partner ID
+    this.s_id = s_id; // Product ID
+    this.key = key; // Product KEY
+    this.o_id = o_id; // Order ID
+    this.tr_id = tr_id; // Transaction ID
+    this.method = method; // Method (account) or (code)
+    this.amount = amount; // Product amount
+    this.test = test; // Test mode: 0, Prod mode: 1
+    this.hash = hash; // Auto hash
   }
 
   result() {
