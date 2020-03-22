@@ -31,7 +31,7 @@ app.post('/result', (req, res) => {
     );
 
     check.result();
-    // res.json(req.body);
+    res.json(req.body);
 
     res.sendStatus(200);
   } catch (err) {
