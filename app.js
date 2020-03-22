@@ -33,7 +33,7 @@ app.post('/result', (req, res) => {
 
     res.send().status(201);
   } catch (err) {
-    res.status(404).json({ error: err });
+    res.status(400).send(err);
   }
 });
 
