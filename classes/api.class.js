@@ -17,15 +17,25 @@ class Checkout {
       this.p_id + this.s_id + this.o_id + this.tr_id + this.key
     ).toLocaleUpperCase();
 
-    if (hash !== this.hash) {
+    if (hash == this.hash) {
+      if (this.tr_id == '0') {
+        console.log('success');
+      }
+
+      return 1;
+    } else {
       return 0;
     }
 
-    if (this.test == '0') {
-      return 'Hesab artirildi!';
-    }
+    // if (hash !== this.hash) {
+    //   return 0;
+    // }
 
-    return 1;
+    // if (this.test == '0') {
+    //   return 'Hesab artirildi!';
+    // }
+
+    // return 1;
   }
 }
 

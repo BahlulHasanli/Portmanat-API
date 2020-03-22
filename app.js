@@ -28,7 +28,7 @@ app.post('/result', (req, res) => {
     req.body.hash
   );
 
-  check.result();
+  res.send(check.result());
 });
 
 app.get('/result', (req, res) => {
