@@ -18,12 +18,12 @@ app.get('/', (req, res) => {
 app.post('/result', (req, res) => {
   const check = new portmanat(
     14087,
-    req.body.o_id,
+    req.body.s_id,
     'b@belshow9596',
-    22,
+    req.body.o_id,
     req.body.transaction,
-    'account',
-    20,
+    req.body.method,
+    req.body.amount,
     req.body.test,
     req.body.hash
   );
