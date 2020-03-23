@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
 });
 
 // Result Route
-app.post('/result', async (req, res) => {
+app.post('/result', (req, res) => {
   const portmanatData = new portmanat(
     123456,
     req.body.s_id,
