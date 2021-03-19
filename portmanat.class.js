@@ -1,7 +1,6 @@
 'use strict';
 
-// MD5 package
-const md5 = require('md5');
+const crypto = require('crypto').createHash('md5');
 
 class Checkout {
   constructor(p_id, s_id, key, o_id, tr_id, method, amount, test, hash) {
@@ -17,9 +16,10 @@ class Checkout {
   }
 
   result() {
-    const hash = md5(
-      this.p_id + this.s_id + this.o_id + this.tr_id + this.key
-    ).toUpperCase();
+    const hash = crypto
+      .update(`${this.p_id}${this.s_id}${this.o_id}${this.tr_id}${this.key}`)
+      .digest('hex')
+      .toUpperCase();
 
     if (hash !== this.hash) return 0;
 

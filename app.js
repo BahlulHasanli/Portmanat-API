@@ -1,47 +1,39 @@
 'use strict';
 
-// Packages
+const path = require('path');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Call Portmanat API class
-const portmanat = require('./classes/api.class');
+const api = require('./portmanat.class');
 
-// Template Engine EJS
-app.set('view engine', 'ejs');
-app.set('views', './templates');
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-// Main route
 app.get('/', (req, res) => {
-  res.render('index');
+  res.sendFile('index.html');
 });
 
-// Result Route
 app.post('/result', (req, res) => {
-  const portmanatData = new portmanat(
+  const { s_id, o_id, transaction, method, amount, test, hash } = req.body;
+
+  const portmanat = new api(
     123456,
-    req.body.s_id,
+    s_id,
     '123456',
-    req.body.o_id,
-    req.body.transaction,
-    req.body.method,
-    req.body.amount,
-    req.body.test,
-    req.body.hash
+    o_id,
+    transaction,
+    method,
+    amount,
+    test,
+    hash
   );
 
   try {
-    const CheckoutData = portmanatData.result();
+    const result = portmanat.result();
 
-    res.json(CheckoutData);
+    res.json(result);
   } catch (err) {
     res.json(err);
   }
 });
 
-app.listen(PORT, () => console.log('Server run up!'));
+app.listen(3838, () => console.log('Server run app'));
