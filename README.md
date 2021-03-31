@@ -4,13 +4,11 @@ NodeJS proyektləri üçün hazırlanmış [Portmanat.az](https://portmanat.az/)
 
 ## Necə quraşdırım?
 
-```
-npm install
-```
+`npm install`
 
 ## Kod nümunəsi
 
-```
+```javascript
 'use strict';
 
 const path = require('path');
@@ -54,7 +52,7 @@ app.listen(3838, () => console.log('Server run app'));
 
 ## Class daxilindəki kod nümunəsi
 
-```
+```javascript
 'use strict';
 
 const crypto = require('crypto').createHash('md5');
@@ -87,5 +85,4 @@ class Checkout {
 }
 
 module.exports = Checkout;
-
 ```
